@@ -1,0 +1,39 @@
+<button (click)="openDialog()">Filter</button>
+<mat-sidenav-container>
+  <mat-sidenav #sidenav mode="side" [(opened)]="openSidenav" class="side-nav">
+    <mat-toolbar>
+      <button class="right" (click)="closeSidenav()">Close</button>
+    </mat-toolbar>
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>Details</mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-list role="list">
+          <mat-list-item role="listitem"> Date posted: {{sideNavDate}}</mat-list-item>
+          <mat-list-item role="listitem"><a href="{{sideNavTweet}}" target="_blank">Go to Tweet</a></mat-list-item>
+          <mat-list-item role="listitem"><a href="{{sideNavAuthorLink}}"> Go to Tweet Author: {{sideNavAuthor}}</a></mat-list-item>
+        </mat-list>
+      </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>Images from Cluster</mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-grid-list cols="1" rowHeight="400px">
+          <mat-grid-tile *ngFor="let image of images">
+            <img class="img" alt="{{image.id}}" src="{{image.url}}">
+          </mat-grid-tile>
+        </mat-grid-list>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </mat-sidenav>
+  <div class="text-center">
+    <div *ngIf="dataGraph==null" class="center">
+      {{"Oops, please reload. Server might be not reachable."}}
+    </div>
+  </div>
+  <mat-sidenav-content>
+    <div #graph></div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+

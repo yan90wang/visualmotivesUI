@@ -1,0 +1,15 @@
+<div mat-dialog-content>
+  <h2>Filter</h2>
+  <span>Cluster size</span>
+  <mat-slider
+    class="card-margin"
+    [max]="maxSize"
+    [min]="1"
+    [thumbLabel]="true"
+    [value]="initValue"
+    [(ngModel)]="pickedSize">
+  </mat-slider>
+  <div mat-dialog-actions>
+    <button (click)="closeDialog()">Save</button>
+  </div>
+</div>

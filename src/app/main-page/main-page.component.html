@@ -1,0 +1,12 @@
+<mat-toolbar>
+    <span>{{title}}</span>
+  <span class="spacer"></span>
+    <mat-slide-toggle (toggleChange)="toggleView()">Toggle View</mat-slide-toggle>
+</mat-toolbar>
+
+<div *ngIf=graphToggled>
+  <app-cluster-graph></app-cluster-graph>
+</div>
+<div *ngIf=!graphToggled>
+  <app-cluster-chart></app-cluster-chart>
+</div>

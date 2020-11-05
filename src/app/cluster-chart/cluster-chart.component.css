@@ -1,0 +1,39 @@
+.height-full {
+  height: 700px;
+}
+
+
+.right {
+  position: absolute;
+  right: 20px;
+}
+
+.img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.side-nav {
+  width: 500px;
+}
+
+.center {
+  display: inline-block;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.align-right-block {
+  float: right;
+  display: inline-block;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.block-list {
+  display: inline-grid;
+  justify-content: space-between;
+}
+
